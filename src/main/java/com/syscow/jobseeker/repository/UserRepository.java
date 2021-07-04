@@ -12,4 +12,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("SELECT u FROM User u WHERE u.name = :name")
     Collection<User> findName(@Param("name") String name);
 
+    @Query("SELECT u FROM User u WHERE u.apiKey = :apiKey")
+    Collection<User> findApiKey(@Param("apiKey") String apiKey);
+
 }

@@ -38,4 +38,9 @@ public class UserService {
         return user.get();
     }
 
+    public boolean isApiKeyValid(String apiKey) {
+        return userRepository.findApiKey(apiKey).stream()
+                .anyMatch(apiKeyEntity -> apiKeyEntity.getApiKey().equals(apiKey));
+    }
+
 }
