@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class PositionService {
+public class PositionService implements IPositionService {
 
     private final PositionRepository positionRepository;
 
@@ -39,12 +39,12 @@ public class PositionService {
 
     public List<PositionResponse> findByNameAndLocation(String keyWord, String location) {
         List<Position> result = positionRepository.findByNameAndLocation(keyWord, location);
-        final String baseUrl = ServletUriComponentsBuilder.fromCurrentRequestUri()
-                .build().toUriString();
+//        final String baseUrl = ServletUriComponentsBuilder.fromCurrentRequestUri()
+//                .build().toUriString();
+        String baseUrl = "http://localhost:8080/job/positions";
         final String url = baseUrl.substring(0, baseUrl.length() - 1) + "/";
         return result.stream().map(p -> new PositionResponse(p.getName(), p.getAddress(), url + p.getId()))
                 .collect(Collectors.toList());
     }
-
 
 }

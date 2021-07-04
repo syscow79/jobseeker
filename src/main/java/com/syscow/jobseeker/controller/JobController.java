@@ -2,6 +2,7 @@ package com.syscow.jobseeker.controller;
 
 import com.syscow.jobseeker.entity.Position;
 import com.syscow.jobseeker.model.PositionResponse;
+import com.syscow.jobseeker.service.ExternalPositionService;
 import com.syscow.jobseeker.service.PositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,11 @@ import java.util.List;
 public class JobController {
 
     private final PositionService positionService;
+    private final ExternalPositionService externalPositionService;
 
-    public JobController(PositionService positionService) {
+    public JobController(PositionService positionService, ExternalPositionService externalPositionService) {
         this.positionService = positionService;
+        this.externalPositionService = externalPositionService;
     }
 
     @PostMapping(path = "/position")
@@ -53,7 +56,7 @@ public class JobController {
             @RequestParam("keyword") @Max(50) String keyWord,
             @RequestParam("location") @Max(50) String location)
     {
-        return ResponseEntity.ok(positionService.findByNameAndLocation(keyWord, location));
+        return ResponseEntity.ok(externalPositionService.findAllByNameAndLocation(keyWord, location));
     }
 
 }
