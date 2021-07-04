@@ -1,11 +1,15 @@
 package com.syscow.jobseeker.service;
 
 import com.syscow.jobseeker.entity.Position;
+import com.syscow.jobseeker.model.PositionResponse;
 import com.syscow.jobseeker.repository.PositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PositionService {
@@ -32,5 +36,15 @@ public class PositionService {
         }
         return position.get();
     }
+
+    public List<PositionResponse> findByNameAndLocation(String keyWord, String location) {
+        List<Position> result = positionRepository.findByNameAndLocation(keyWord, location);
+        final String baseUrl = ServletUriComponentsBuilder.fromCurrentRequestUri()
+                .build().toUriString();
+        final String url = baseUrl.substring(0, baseUrl.length() - 1) + "/";
+        return result.stream().map(p -> new PositionResponse(p.getName(), p.getAddress(), url + p.getId()))
+                .collect(Collectors.toList());
+    }
+
 
 }
