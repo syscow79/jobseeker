@@ -16,10 +16,10 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Size(max = 50)
+    @Size(min = 5, max = 50)
     private String name;
 
-    @Size(max = 50)
+    @Size(min = 5, max = 50)
     private String address;
 
 }

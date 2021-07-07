@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "6512c9a5-9485-4f1e-b278-1365361930af",
+		"name": "Jobseeker Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "position",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "d94dbc3c-b6c9-426f-ba3d-deeaa74eb64c",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "API_KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"name\", \"address\": \"address\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/job/position",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"position"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "position",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "02807308-92a9-4150-a582-f47ef2b42861",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "API_KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/job/position/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"position",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "positions",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "02807308-92a9-4150-a582-f47ef2b42861",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "API_KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/job/position/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"position",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "azduna",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "vI5mEvMbn2vA/rRlU0hbpHeoO4aRLz7a9ruKdxTLYQo=",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://data.usajobs.gov/api/search?Keyword=Organizations agent&LocationName=South Park",
+					"protocol": "https",
+					"host": [
+						"data",
+						"usajobs",
+						"gov"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "Keyword",
+							"value": "Organizations agent"
+						},
+						{
+							"key": "LocationName",
+							"value": "South Park"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usajob",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "vI5mEvMbn2vA/rRlU0hbpHeoO4aRLz7a9ruKdxTLYQo=",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://data.usajobs.gov/api/search?Keyword=Organizations agent&LocationName=South Park",
+					"protocol": "https",
+					"host": [
+						"data",
+						"usajobs",
+						"gov"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "Keyword",
+							"value": "Organizations agent"
+						},
+						{
+							"key": "LocationName",
+							"value": "South Park"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -7,16 +7,19 @@ import com.syscow.jobseeker.service.PositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Controller
 @RequestMapping(path = "/job")
+@Validated
 public class JobController {
 
     private final PositionService positionService;
@@ -47,14 +50,14 @@ public class JobController {
             return ResponseEntity.ok(positionService.findById(id));
         } catch (Exception ex) {
             throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "Foo Not Found", ex);
+                    HttpStatus.NOT_FOUND, "Not found", ex);
         }
     }
 
     @GetMapping(path = "/positions")
     public ResponseEntity<List<PositionResponse>> findPositions(
-            @RequestParam("keyword") @Max(50) String keyWord,
-            @RequestParam("location") @Max(50) String location)
+            @RequestParam("keyword") @Size(min = 5, max = 50) String keyWord,
+            @RequestParam("location") @Size(min = 5, max = 50) String location)
     {
         return ResponseEntity.ok(externalPositionService.findAllByNameAndLocation(keyWord, location));
     }
