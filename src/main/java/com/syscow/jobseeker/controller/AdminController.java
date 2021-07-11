@@ -1,7 +1,7 @@
 package com.syscow.jobseeker.controller;
 
 import com.syscow.jobseeker.entity.User;
-import com.syscow.jobseeker.service.UserService;
+import com.syscow.jobseeker.service.job.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

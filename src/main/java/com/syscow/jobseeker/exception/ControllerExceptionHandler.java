@@ -1,8 +1,7 @@
 package com.syscow.jobseeker.exception;
 
-import com.syscow.jobseeker.entity.JobError;
 import com.syscow.jobseeker.model.JobErrorResponse;
-import com.syscow.jobseeker.service.JobErrorResponseService;
+import com.syscow.jobseeker.service.job.JobErrorResponseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

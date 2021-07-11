@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.service;
+package com.syscow.jobseeker.service.email;
 
 import com.github.javafaker.service.FakeValuesService;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class RandomEmailService {
         return Stream.iterate(0, i -> i + 1)
                 .parallel().limit(id)
                 .map(integer -> fakeValuesService
-                        .regexify("[a-z]{2,3}[a-z1-9]{3,9}[@][a-z]{5,7}[.][c][o][m]"))
+                        .regexify("[a-z]{1}[a-z1-9]{1}[@][a-z]{1}[.][c][o][m]"))
                 .collect(Collectors.joining("\n"));
     }
 

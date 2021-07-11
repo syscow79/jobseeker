@@ -2,8 +2,8 @@ package com.syscow.jobseeker.controller;
 
 import com.syscow.jobseeker.entity.Position;
 import com.syscow.jobseeker.model.PositionResponse;
-import com.syscow.jobseeker.service.ExternalPositionService;
-import com.syscow.jobseeker.service.PositionService;
+import com.syscow.jobseeker.service.job.ExternalPositionService;
+import com.syscow.jobseeker.service.job.PositionService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;

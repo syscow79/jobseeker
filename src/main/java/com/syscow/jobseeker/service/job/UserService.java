@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.service;
+package com.syscow.jobseeker.service.job;
 
 import com.syscow.jobseeker.entity.User;
 import com.syscow.jobseeker.repository.UserRepository;

@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.service;
+package com.syscow.jobseeker.service.job;
 
 import com.syscow.jobseeker.model.PositionResponse;
 import org.springframework.beans.factory.annotation.Autowired;

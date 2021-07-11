@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.service;
+package com.syscow.jobseeker.service.job;
 
 import com.syscow.jobseeker.entity.Position;
 import com.syscow.jobseeker.exception.RepositoryException;
@@ -7,7 +7,6 @@ import com.syscow.jobseeker.model.PositionResponse;
 import com.syscow.jobseeker.repository.PositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.List;
 import java.util.Optional;

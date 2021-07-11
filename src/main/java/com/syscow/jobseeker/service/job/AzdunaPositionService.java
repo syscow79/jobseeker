@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.service;
+package com.syscow.jobseeker.service.job;
 
 import com.syscow.jobseeker.model.PositionResponse;
 import com.syscow.jobseeker.model.adzuna.AdzunaResponse;

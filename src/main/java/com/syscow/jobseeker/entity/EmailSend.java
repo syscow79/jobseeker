@@ -24,4 +24,5 @@ public class EmailSend {
     @Column(unique = true)
     private String email;
 
+    private boolean sent;
 }
