@@ -1,4 +1,4 @@
-package com.syscow.jobseeker.entity;
+package com.syscow.jobseeker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,23 +9,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Data
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Position {
+public class JobErrorResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Size(min = 5, max = 50)
-    private String name;
+    private Date date;
 
-    @Size(min = 5, max = 50)
-    private String address;
-
+    private String messages;
 }

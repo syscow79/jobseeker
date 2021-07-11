@@ -1,6 +1,8 @@
 package com.syscow.jobseeker.service;
 
 import com.syscow.jobseeker.entity.Position;
+import com.syscow.jobseeker.exception.RepositoryException;
+import com.syscow.jobseeker.exception.RepositoryNotFoundException;
 import com.syscow.jobseeker.model.PositionResponse;
 import com.syscow.jobseeker.repository.PositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +27,14 @@ public class PositionService implements IPositionService {
         try {
             return positionRepository.save(position).getId();
         } catch (Exception ex) {
-            throw new RuntimeException("Position not created");
+            throw new RepositoryException("Position not created", ex);
         }
     }
 
     public Position findById(Integer id) {
         Optional<Position> position = positionRepository.findById(id);
         if (position.isEmpty()) {
-            throw new RuntimeException("Position not found");
+            throw new RepositoryNotFoundException("Position not found");
         }
         return position.get();
     }
